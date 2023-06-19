@@ -1,0 +1,5 @@
+name: CommandCentral
+main: de.ironaxe.commandcentral.CommandCentralBungee
+description: Command firewall for Bukkit and Waterfall
+author: kiwi
+version: 0.1

@@ -1,0 +1,7 @@
+api: "1.0"
+main: de.ironaxe.commandcentral.CommandCentralBukkit
+author: kiwi
+name: CommandCentral
+description: Command firewall for Bukkit and Waterfall
+version: "0.1"
+api-version: 1.19
