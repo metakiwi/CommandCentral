@@ -24,16 +24,25 @@ public class CommandSendEventListener implements Listener {
         Collection<String> commands = e.getCommands();
         Collection<String> removeCommands = new ArrayList<String>();
 
+        Player player = e.getPlayer();
+        Boolean showIncompatibleCommands = player.hasPermission("commandcentral.showincompatiblecommands");
+        Boolean showColonCommands = player.hasPermission("commandcentral.showcoloncommands");
+
         for (String commandString : commands) {
-            Player player = e.getPlayer();
             PluginCommand pluginCommand = Bukkit.getPluginCommand(commandString);
             String pluginPermission = pluginCommand != null ? pluginCommand.getPermission() : null;
             String allowPermission = "commandcentral.allowcommand." + commandString;
-            Boolean playerHasPluginPermission = pluginPermission != null ? player.hasPermission(pluginPermission) : false;
+            Boolean playerHasPluginPermission = pluginPermission != null ? player.hasPermission(pluginPermission)
+                    : false;
             Boolean playerHasAllowPermission = player.hasPermission(allowPermission);
-            Boolean showIncompatibleCommands = player.hasPermission("commandcentral.showincompatiblecommands");
-            
-            if (!playerHasAllowPermission && !playerHasPluginPermission && (pluginPermission == null && !showIncompatibleCommands)) {
+            Boolean delete = !playerHasAllowPermission && !playerHasPluginPermission
+                    && (pluginPermission == null && !showIncompatibleCommands);
+
+            if (!delete && (commandString.indexOf(":") >= 0) && !showColonCommands) {
+                delete = true;
+            }
+
+            if (delete) {
                 removeCommands.add(commandString);
             }
         }
