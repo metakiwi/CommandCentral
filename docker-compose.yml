@@ -1,0 +1,40 @@
+version: "3"
+services:
+  proxy1:
+    image: itzg/bungeecord
+    user: 1000:1000
+    environment:
+      MEMORY: 512M
+#      TYPE: WATERFALL
+      TYPE: CUSTOM
+      BUNGEE_JAR_FILE: waterfall-1.13-276.jar
+    ports:
+      - 25565:25577/tcp
+    volumes:
+      - proxy1:/server
+      - ./target/CommandCentral.jar:/server/plugins/CommandCentral.jar
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+  server1:
+#    image: itzg/minecraft-server
+    image: itzg/minecraft-server:java11
+    volumes:
+      - server1:/data
+      - ./target/CommandCentral.jar:/data/plugins/CommandCentral.jar
+    environment:
+      TZ: Europe/Berlin
+      EXEC_DIRECTLY: "true"
+      EULA: "TRUE"
+      MEMORY: "1G"
+#      TYPE: PAPER
+      TYPE: CUSTOM
+      CUSTOM_SERVER: paper-1.13-173.jar
+      UID: 1000
+      GID: 1000
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+volumes:
+  proxy1:
+  server1:

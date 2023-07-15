@@ -1,0 +1,39 @@
+package de.ironaxe.commandcentral.Filter;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import org.bukkit.Bukkit;
+import org.bukkit.command.PluginCommand;
+
+public class FilterCommandsBukkit implements FilterCommands {
+    Collection<String> commands;
+    List<FilterCommand> removeCommands = new ArrayList<FilterCommand>();
+
+    public FilterCommandsBukkit(Collection<String> commands) {
+        this.commands = commands;
+    }
+
+    public List<FilterCommand> getCommands() {
+        List<FilterCommand> commandList = new ArrayList<FilterCommand>();
+        for (String command : commands) {
+            PluginCommand pluginCommand = Bukkit.getPluginCommand(command);
+            String permission = pluginCommand != null ? pluginCommand.getPermission() : null;
+
+            commandList.add(new FilterCommand(command, permission));
+        }
+
+        return commandList;
+    }
+
+    public void remove(FilterCommand command) {
+        removeCommands.add(command);
+    }
+
+    public void refreshCommands() {
+        for(FilterCommand command : removeCommands) {
+            commands.remove(command.getCommand());
+        }
+    }
+}

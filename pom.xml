@@ -5,22 +5,21 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.ironaxe.commandcentral</groupId>
   <artifactId>CommandCentral</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.0</version>
+  <description></description>
   <packaging>jar</packaging>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+    <plugin.version>${project.version}</plugin.version>
+    <plugin.description>Command suggestion filter for Bukkit and Waterfall</plugin.description>
   </properties>
   <repositories>
     <repository>
       <id>spigot-repo</id>
       <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
     </repository>
-    <!--    <repository>
-      <id>jitpack.io</id>
-      <url>https://jitpack.io</url>
-    </repository>-->
     <repository>
       <id>papermc</id>
       <url>https://repo.papermc.io/repository/maven-public/</url>
@@ -30,27 +29,15 @@
     <dependency>
       <groupId>io.github.waterfallmc</groupId>
       <artifactId>waterfall-api</artifactId>
-      <version>1.19-R0.1-SNAPSHOT</version>
+      <version>1.13-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.spigotmc</groupId>
       <artifactId>spigot-api</artifactId>
-      <version>1.20.1-R0.1-SNAPSHOT</version>
+      <version>1.13-R0.1-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
-    <!--    <dependency>
-        <groupId>net.luckperms</groupId>
-        <artifactId>api</artifactId>
-        <version>5.4</version>
-        <scope>provided</scope>
-    </dependency>-->
-    <!--    <dependency>
-      <groupId>com.github.MilkBowl</groupId>
-      <artifactId>VaultAPI</artifactId>
-      <version>1.7</version>
-      <scope>provided</scope>
-    </dependency>-->
   </dependencies>
   <build>
     <finalName>${project.artifactId}</finalName>

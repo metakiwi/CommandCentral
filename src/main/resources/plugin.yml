@@ -1,7 +1,6 @@
-api: "1.0"
 main: de.ironaxe.commandcentral.CommandCentralBukkit
 author: kiwi
 name: CommandCentral
-description: Command suggestion firewall for Bukkit and Waterfall
-version: "${project.version}"
-api-version: 1.18
+description: ${plugin.description}
+version: "${plugin.version}"
+api-version: 1.13
