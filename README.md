@@ -22,6 +22,8 @@ You can adjust the behaviour by setting group/user permissions in your favorite 
 * `commandcentral.showColonCommands` - don't filter commands containing a colon
 * `commandcentral.show.<command>` - don't filter `<command>`
 * `commandcentral.hide.<command>` - filter `<command>`
+* `commandcentral.showplugin.<PluginName>` - don't filter commands from `<PluginName>`. Case sensitive! Get the plugin name from logs or `/plugins`.
+* `commandcentral.hideplugin.<PluginName>` - filter commands from `<PluginName>`. Case sensitive! Get the plugin name from logs or `/plugins`.
 
 ## Support
 Discord: https://discord.gg/uVuvWgfjHk
