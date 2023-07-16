@@ -6,13 +6,7 @@ Download latest release file: https://github.com/metakiwi/CommandCentral/release
 ## General
 Plugin for *Bukkit and Waterfall*. Hooks into Minecraft command suggestions and filter them by *permissions*. Compiled against Java 8 and Bukkit 1.13 for maximum compability.
 
-What do you want your players to see? This messy list of unusable commands
-
-![Before](https://imgtr.ee/images/2023/07/16/bfada0eaa14782f7a93dd12c2906abb3.png)
-
-or this?
-
-![After](https://imgtr.ee/images/2023/07/16/5fa34f9a3d61b7408005bb4a56f592a8.png)
+![Demo](https://imgtr.ee/images/2023/07/16/0ebc385987763d9c1d6821e93e479897.png)
 
 ## Installation
 Drop JAR file in your `/plugins/` folder and restart server(s). The JAR file works for *both* platforms (Bukkit/Waterfall). There is no config file since everything is configured by permissions.
