@@ -19,9 +19,16 @@ public class FilterCommandsBukkit implements FilterCommands {
         List<FilterCommand> commandList = new ArrayList<FilterCommand>();
         for (String command : commands) {
             PluginCommand pluginCommand = Bukkit.getPluginCommand(command);
-            String permission = pluginCommand != null ? pluginCommand.getPermission() : null;
+            
+            String pluginName = null;
+            String permission = null;
 
-            commandList.add(new FilterCommand(command, permission));
+            if(pluginCommand != null) {
+                pluginName = pluginCommand.getPlugin().getName();
+                permission = pluginCommand.getPermission();
+            }
+            
+            commandList.add(new FilterCommand(command, permission, pluginName));
         }
 
         return commandList;
