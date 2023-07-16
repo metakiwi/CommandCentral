@@ -29,6 +29,9 @@ You can adjust the behaviour by setting group/user permissions in your favorite 
 * `commandcentral.show.<command>` - don't filter `<command>`
 * `commandcentral.hide.<command>` - filter `<command>`
 
+## Support
+Discord: https://discord.gg/uVuvWgfjHk
+
 ## Bugs, suggestions, feature requests
 Please just file a [GitHub issue](https://github.com/metakiwi/CommandCentral/issues).
 
