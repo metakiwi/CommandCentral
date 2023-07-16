@@ -38,7 +38,3 @@ Dependencies and building is all set up in maven. So building the jar file is si
 * Checkout repository `git clone https://github.com/metakiwi/CommandCentral.git`
 * Build with maven `mvn clean package`
 The resulting jar file will be located in `target/CommandCentral.jar`
-
-https://imgtr.ee/images/2023/07/16/bfada0eaa14782f7a93dd12c2906abb3.png
-https://imgtr.ee/images/2023/07/16/5fa34f9a3d61b7408005bb4a56f592a8.png
-https://imgtr.ee/images/2023/07/16/e8e6427ce0f3859aa4bcdc5c1e6cf0f9.png
