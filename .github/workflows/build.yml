@@ -16,3 +16,8 @@ jobs:
           architecture: x64
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots package
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: package
+          path: target/CommandCentral.jar
