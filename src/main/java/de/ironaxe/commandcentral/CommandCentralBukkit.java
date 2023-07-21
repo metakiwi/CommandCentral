@@ -10,7 +10,7 @@ public class CommandCentralBukkit extends JavaPlugin {
     public void onEnable() {
         new Metrics(this, 19144);
         
-        getServer().getPluginManager().registerEvents(new CommandSendEventListener(this), this);
+        getServer().getPluginManager().registerEvents(new CommandSendEventListener(), this);
     }
 
     @Override

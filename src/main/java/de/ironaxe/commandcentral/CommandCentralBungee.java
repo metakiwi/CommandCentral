@@ -10,7 +10,7 @@ public class CommandCentralBungee extends Plugin {
     public void onEnable() {
         new Metrics(this, 19145);
 
-        getProxy().getPluginManager().registerListener(this, new ProxyDefineCommandsEventListener(this));
+        getProxy().getPluginManager().registerListener(this, new ProxyDefineCommandsEventListener());
     }
 
     @Override
