@@ -1,4 +1,4 @@
-package de.ironaxe.commandcentral.Filter;
+package de.ironaxe.commandcentral.Filter.Bukkit;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -6,6 +6,9 @@ import java.util.List;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.PluginCommand;
+
+import de.ironaxe.commandcentral.Filter.FilterCommand;
+import de.ironaxe.commandcentral.Filter.Interface.FilterCommands;
 
 public class FilterCommandsBukkit implements FilterCommands {
     Collection<String> commands;

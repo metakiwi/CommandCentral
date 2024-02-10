@@ -1,5 +1,6 @@
-package de.ironaxe.commandcentral.Filter;
+package de.ironaxe.commandcentral.Filter.Bungee;
 
+import de.ironaxe.commandcentral.Filter.Interface.FilterPlayer;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 
 public class FilterPlayerBungee implements FilterPlayer {

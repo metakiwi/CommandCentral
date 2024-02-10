@@ -1,5 +1,8 @@
 package de.ironaxe.commandcentral.Filter;
 
+import de.ironaxe.commandcentral.Filter.Interface.FilterCommands;
+import de.ironaxe.commandcentral.Filter.Interface.FilterPlayer;
+
 public class Filter {
     private FilterPlayer player;
     private FilterCommands commands;

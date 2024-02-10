@@ -1,8 +1,8 @@
 package de.ironaxe.commandcentral.Listener;
 
 import de.ironaxe.commandcentral.Filter.Filter;
-import de.ironaxe.commandcentral.Filter.FilterCommandsBungee;
-import de.ironaxe.commandcentral.Filter.FilterPlayerBungee;
+import de.ironaxe.commandcentral.Filter.Bungee.FilterCommandsBungee;
+import de.ironaxe.commandcentral.Filter.Bungee.FilterPlayerBungee;
 import io.github.waterfallmc.waterfall.event.ProxyDefineCommandsEvent;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Listener;

@@ -1,6 +1,8 @@
-package de.ironaxe.commandcentral.Filter;
+package de.ironaxe.commandcentral.Filter.Bukkit;
 
 import org.bukkit.entity.Player;
+
+import de.ironaxe.commandcentral.Filter.Interface.FilterPlayer;
 
 public class FilterPlayerBukkit implements FilterPlayer {
     private Player player;

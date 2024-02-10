@@ -1,9 +1,11 @@
-package de.ironaxe.commandcentral.Filter;
+package de.ironaxe.commandcentral.Filter.Bungee;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import de.ironaxe.commandcentral.Filter.FilterCommand;
+import de.ironaxe.commandcentral.Filter.Interface.FilterCommands;
 import net.md_5.bungee.api.plugin.Command;
 
 public class FilterCommandsBungee implements FilterCommands {
