@@ -7,12 +7,13 @@ services:
       MEMORY: 512M
 #      TYPE: WATERFALL
       TYPE: CUSTOM
-      BUNGEE_JAR_FILE: waterfall-1.13-276.jar
+      BUNGEE_JAR_FILE: waterfall.jar
     ports:
       - 25565:25577/tcp
     volumes:
       - proxy1:/server
       - ./target/CommandCentral.jar:/server/plugins/CommandCentral.jar
+      - ./waterfall.jar:/server/waterfall.jar
     tty: true
     stdin_open: true
     restart: unless-stopped
@@ -22,6 +23,7 @@ services:
     volumes:
       - server1:/data
       - ./target/CommandCentral.jar:/data/plugins/CommandCentral.jar
+      - ./paper.jar:/data/paper.jar
     environment:
       TZ: Europe/Berlin
       EXEC_DIRECTLY: "true"
@@ -29,7 +31,7 @@ services:
       MEMORY: "1G"
 #      TYPE: PAPER
       TYPE: CUSTOM
-      CUSTOM_SERVER: paper-1.13-173.jar
+      CUSTOM_SERVER: paper.jar
       UID: 1000
       GID: 1000
     tty: true
