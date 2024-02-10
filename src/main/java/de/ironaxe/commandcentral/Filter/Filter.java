@@ -12,38 +12,16 @@ public class Filter {
         this.commands = commands;
 
         filterByPermissions();
+        commands.refreshCommands();
     }
 
     public void filterByPermissions() {
-        for (FilterCommand command : commands.getCommands()) {
-            Boolean show = false;
+        if(!player.hasPermission("commandcentral.filter")) return;
 
-            show = player.hasPermission(command.getPermission()) ||
-                    player.hasPermission("commandcentral.show." + command.getCommand());
-
-            if (!show && command.getPluginName() != null
-                    && player.hasPermission("commandcentral.showplugin." + command.getPluginName()))
-                show = true;
-
-            if (command.getCommand().contains(":")
-                    && !player.hasPermission("commandcentral.showColonCommands"))
-                show = false;
-
-            if (player.hasPermission("commandcentral.hide." + command.getCommand()))
-                show = false;
-
-            if (show && command.getPluginName() != null
-                    && player.hasPermission("commandcentral.hideplugin." + command.getPluginName()))
-                show = false;
-
-            if (player.hasPermission("commandcentral.bypass"))
-                show = true;
-
-            if (!show) {
+        for (String command : commands.getCommands()) {
+            if (!player.hasPermission("commandcentral.command." + command) && !player.isOp()) {
                 commands.remove(command);
             }
         }
-
-        commands.refreshCommands();
     }
 }
