@@ -37,7 +37,7 @@ public class Filter {
     }
 
     public boolean isBlockedByFirewall(String command) {
-        if(!hasPermission("commandcentral.firewall") || player.isOp()) return false;
+        if(!hasPermission("commandcentral.filter") || player.isOp()) return false;
         
         return !hasCommandPermission(command);
     }
