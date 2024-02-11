@@ -10,18 +10,35 @@ public class Filter {
     public Filter(FilterPlayer player, FilterCommands commands) {
         this.player = player;
         this.commands = commands;
+    }
 
-        filterByPermissions();
-        commands.refreshCommands();
+    public Filter(FilterPlayer player) {
+        this.player = player;
     }
 
     public void filterByPermissions() {
-        if(!player.hasPermission("commandcentral.filter")) return;
+        if(!hasPermission("commandcentral.filter") || player.isOp()) return;
 
         for (String command : commands.getCommands()) {
-            if (!player.hasPermission("commandcentral.command." + command) && !player.isOp()) {
+            if (!hasCommandPermission(command)) {
                 commands.remove(command);
             }
         }
+
+        commands.refreshCommands();
+    }
+
+    public boolean hasPermission(String permission) {
+        return player.hasPermission(permission);
+    }
+
+    public boolean hasCommandPermission(String command) {
+        return hasPermission("commandcentral.command." + command);
+    }
+
+    public boolean isBlockedByFirewall(String command) {
+        if(!hasPermission("commandcentral.firewall") || player.isOp()) return false;
+        
+        return !hasCommandPermission(command);
     }
 }

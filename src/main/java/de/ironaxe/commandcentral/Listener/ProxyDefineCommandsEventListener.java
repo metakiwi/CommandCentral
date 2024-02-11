@@ -11,6 +11,7 @@ import net.md_5.bungee.event.EventHandler;
 public class ProxyDefineCommandsEventListener implements Listener {
     @EventHandler
     public void onTabCompleteResponse(ProxyDefineCommandsEvent e) {
-        new Filter(new FilterPlayerBungee((ProxiedPlayer)e.getReceiver()), new FilterCommandsBungee(e.getCommands()));
+        Filter filter = new Filter(new FilterPlayerBungee((ProxiedPlayer)e.getReceiver()), new FilterCommandsBungee(e.getCommands()));
+        filter.filterByPermissions();
     }
 }

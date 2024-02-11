@@ -10,7 +10,8 @@ import de.ironaxe.commandcentral.Filter.Bukkit.FilterPlayerBukkit;
 
 public class CommandSendEventListener implements Listener {
     @EventHandler
-    public void playerCommandSendEvent(PlayerCommandSendEvent e) {
-        new Filter(new FilterPlayerBukkit(e.getPlayer()), new FilterCommandsBukkit(e.getCommands()));
+    public void onPlayerCommandSendEvent(PlayerCommandSendEvent e) {
+        Filter filter = new Filter(new FilterPlayerBukkit(e.getPlayer()), new FilterCommandsBukkit(e.getCommands()));
+        filter.filterByPermissions();
     }
 }
