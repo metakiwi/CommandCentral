@@ -5,14 +5,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.ironaxe.commandcentral</groupId>
   <artifactId>CommandCentral</artifactId>
-  <version>1.1.1</version>
+  <version>2.0.0</version>
   <packaging>jar</packaging>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <plugin.version>${project.version}</plugin.version>
-    <plugin.description>Command suggestion filter for Bukkit and Waterfall</plugin.description>
+    <plugin.description>Command suggestion filter and firewall for Bukkit and Waterfall</plugin.description>
   </properties>
   <repositories>
     <repository>

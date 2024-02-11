@@ -1,5 +1,8 @@
 package de.ironaxe.commandcentral.Filter;
 
+import de.ironaxe.commandcentral.Filter.Interface.FilterCommands;
+import de.ironaxe.commandcentral.Filter.Interface.FilterPlayer;
+
 public class Filter {
     private FilterPlayer player;
     private FilterCommands commands;
@@ -7,40 +10,35 @@ public class Filter {
     public Filter(FilterPlayer player, FilterCommands commands) {
         this.player = player;
         this.commands = commands;
+    }
 
-        filterByPermissions();
+    public Filter(FilterPlayer player) {
+        this.player = player;
     }
 
     public void filterByPermissions() {
-        for (FilterCommand command : commands.getCommands()) {
-            Boolean show = false;
+        if(!hasPermission("commandcentral.filter") || player.isOp()) return;
 
-            show = player.hasPermission(command.getPermission()) ||
-                    player.hasPermission("commandcentral.show." + command.getCommand());
-
-            if (!show && command.getPluginName() != null
-                    && player.hasPermission("commandcentral.showplugin." + command.getPluginName()))
-                show = true;
-
-            if (command.getCommand().contains(":")
-                    && !player.hasPermission("commandcentral.showColonCommands"))
-                show = false;
-
-            if (player.hasPermission("commandcentral.hide." + command.getCommand()))
-                show = false;
-
-            if (show && command.getPluginName() != null
-                    && player.hasPermission("commandcentral.hideplugin." + command.getPluginName()))
-                show = false;
-
-            if (player.hasPermission("commandcentral.bypass"))
-                show = true;
-
-            if (!show) {
+        for (String command : commands.getCommands()) {
+            if (!hasCommandPermission(command)) {
                 commands.remove(command);
             }
         }
 
         commands.refreshCommands();
+    }
+
+    public boolean hasPermission(String permission) {
+        return player.hasPermission(permission);
+    }
+
+    public boolean hasCommandPermission(String command) {
+        return hasPermission("commandcentral.command." + command);
+    }
+
+    public boolean isBlockedByFirewall(String command) {
+        if(!hasPermission("commandcentral.firewall") || player.isOp()) return false;
+        
+        return !hasCommandPermission(command);
     }
 }
