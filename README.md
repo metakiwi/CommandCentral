@@ -19,11 +19,11 @@ Adjust the behavior by setting group/user permissions in your preferred permissi
 * `commandcentral.command.<command>` - Allows `<command>` for a user/group.
 
 ## Examples
-* `/lp group default permission set commandcentral.command.warp`
-* `/lp group default permission set commandcentral.command.spawn`
-* `/lp group default permission set commandcentral.command.home`
-* `/lp group default permission set commandcentral.command.sethome`
-* `/lp group default permission set commandcentral.filter`
+* `/lp group default permission set commandcentral.command.warp` - Allow /warp
+* `/lp group default permission set commandcentral.command.spawn` - Allow /spawn
+* `/lp group default permission set commandcentral.command.home` - Allow /home
+* `/lp group default permission set commandcentral.command.sethome` - Allow /sethome
+* `/lp group default permission set commandcentral.filter` - Activate CommandCentral for group `default`
 
 This setup allows users to only use and see `/warp`, `/spawn`, `/home`, and `/sethome`. Everything else is blocked and also filtered out of the command suggestion list.
 
