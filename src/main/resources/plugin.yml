@@ -4,3 +4,4 @@ name: CommandCentral
 description: ${plugin.description}
 version: "${plugin.version}"
 api-version: 1.13
+softdepend: [ LuckPerms ]
