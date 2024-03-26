@@ -1,6 +1,6 @@
 # CommandCentral
 ![Logo](https://raw.githubusercontent.com/metakiwi/CommandCentral/main/images/logo.png)
-
+![bStats](https://bstats.org/signatures/bukkit/CommandCentral.svg)
 Download the latest release file: https://github.com/metakiwi/CommandCentral/releases/latest/download/CommandCentral.jar
 
 ## General
