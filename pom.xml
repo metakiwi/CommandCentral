@@ -75,7 +75,7 @@
           <relocations>
             <relocation>
               <pattern>org.bstats</pattern>
-              <shadedPattern>de.ironaxe.commandcentral</shadedPattern>
+              <shadedPattern>de.ironaxe.commandcentral.bstats</shadedPattern>
             </relocation>
           </relocations>
         </configuration>
