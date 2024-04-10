@@ -5,3 +5,4 @@ description: ${plugin.description}
 version: "${plugin.version}"
 api-version: 1.13
 softdepend: [ LuckPerms ]
+website: https://www.spigotmc.org/resources/commandcentral-clean-up-your-command-suggestion-list.111277/
