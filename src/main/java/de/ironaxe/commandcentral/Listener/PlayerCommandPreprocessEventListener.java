@@ -13,7 +13,7 @@ public class PlayerCommandPreprocessEventListener implements Listener {
         Filter filter = new Filter(new FilterPlayerBukkit(e.getPlayer()));
 
         String[] message = e.getMessage().split(" ");
-        String command = message[0].replace("/", "");
+        String command = message[0].substring(1);
 
         if(filter.isBlockedByFirewall(command)) e.setCancelled(true);
     }

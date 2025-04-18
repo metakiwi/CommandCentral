@@ -15,7 +15,7 @@ public class ChatEventListener implements Listener {
         Filter filter = new Filter(new FilterPlayerBungee((ProxiedPlayer)e.getSender()));
 
         String[] message = e.getMessage().split(" ");
-        String command = message[0].replace("/", "");
+        String command = message[0].substring(1);
 
         if (filter.isBlockedByFirewall(command))
             e.setCancelled(true);
