@@ -25,12 +25,11 @@ Adjust the behavior by setting group/user permissions in your preferred permissi
 * `/lp group default permission set commandcentral.command.sethome` - Allow /sethome
 * `/lp group default permission set commandcentral.filter` - Activate CommandCentral for group `default`
 
-This setup allows users to only use and see `/warp`, `/spawn`, `/home`, and `/sethome`. Everything else is blocked and also filtered out of the command suggestion list.
-
-To deactivate filtering for admin groups that inherit from the default, use:
-* `/lp group admin permission set commandcentral.filter false`
-
-OPs are excluded from filtering and blocking; they will always see everything.
+## WorldEdit/FaWE
+Double-slash commands like //replace or //set are internally handled as commands starting with a slash.
+To allow them, include the leading slash in the permission node:
+* `/lp group default permission set commandcentral.command./replace`
+This applies to all // commands – the slash is part of the command name.
 
 ## Support
 For support, join our Discord: https://discord.gg/uVuvWgfjHk
