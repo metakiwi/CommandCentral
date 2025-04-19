@@ -29,6 +29,7 @@ Adjust the behavior by setting group/user permissions in your preferred permissi
 Double-slash commands like //replace or //set are internally handled as commands starting with a slash.
 To allow them, include the leading slash in the permission node:
 * `/lp group default permission set commandcentral.command./replace`
+
 This applies to all // commands – the slash is part of the command name.
 
 ## Support
